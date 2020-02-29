@@ -1,0 +1,47 @@
+{
+    "title": "Bare",
+    "name": "startbootstrap-bare",
+    "version": "4.2.1",
+    "scripts": {
+        "start": "webpack-dev-server --mode development"
+    },
+    "description": "A basic HTML starter template for Bootstrap",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template"
+    ],
+    "homepage": "https://startbootstrap.com/template-overviews/bare",
+    "bugs": {
+        "url": "https://github.com/BlackrockDigital/startbootstrap-bare/issues",
+        "email": "feedback@startbootstrap.com"
+    },
+    "license": "MIT",
+    "author": "Start Bootstrap",
+    "contributors": [
+        "David Miller (http://davidmiller.io/)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-bare.git"
+    },
+    "dependencies": {
+        "bootstrap": "4.3.1",
+        "jquery": "3.4.1",
+        "rxjs": "^6.5.4",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.8.2",
+        "webpack": "^4.41.6",
+        "webpack-dev-server": "^3.10.3"
+    },
+    "devDependencies": {
+        "browser-sync": "2.26.7",
+        "del": "^4.1.1",
+        "gulp": "4.0.2",
+        "merge-stream": "2.0.0",
+        "webpack-cli": "^3.3.11"
+    }
+}
