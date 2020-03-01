@@ -1,23 +1,30 @@
-import { Observable } from "rxjs";
+import { Observable, of, from, fromEvent, concat } from "rxjs";
 import "bootstrap";
 
-var observable = Observable.create((observer: any) => {
-  observer.next("Hello World!");
-  observer.next("Hello Again!");
-  observer.complete();
-  observer.next("Bye");
-});
+import { allBooks, allReaders } from "../data/books";
 
-observable.subscribe(
-  (x: any) => logItem(x),
-  (error: any) => logItem("Error: " + error),
-  () => logItem("Completed")
-);
+// let allBooksObservable$ = Observable.create((subscriber: any) => {
+//   if (document.title !== "RxBookTracker") {
+//     subscriber.error("Incorrect page title");
+//   }
+//   for (let book of allBooks) {
+//     subscriber.next(book);
+//   }
+//   setTimeout(() => {
+//     subscriber.complete();
+//   }, 2000);
 
-function logItem(val: any) {
-  var node = document.createElement("li");
-  node.classList.add("list-group-item");
-  var textNode = document.createTextNode(val);
-  node.appendChild(textNode);
-  document.getElementById("list").appendChild(node);
-}
+//   return () => console.log("Executing teardown code.");
+// });
+
+// allBooksObservable$.subscribe((book: any) => console.log(book.title));
+
+let source1$ = of("hello", 10, true, allReaders[0].name);
+
+// source1$.subscribe((value: any) => console.log(value));
+
+let source2$ = from(allBooks);
+
+// source2$.subscribe((value: any) => console.log(value));
+
+concat(source1$, source2$).subscribe((value: any) => console.log(value));
